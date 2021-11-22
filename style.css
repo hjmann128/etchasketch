@@ -25,3 +25,7 @@ button {
 .square__black{
     background-color: black;
 }
+
+.square__white{
+    background-color: red;
+}

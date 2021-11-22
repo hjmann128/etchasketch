@@ -2,6 +2,8 @@ const container = document.querySelector('.container');
 const square = document.createElement('div');
 
 const button = document.querySelector('.reset')
+const buttonWhite = document.querySelector('.magic')
+const buttonNew = document.querySelector(".new")
 
 //Each box created must be 960px / number of boxes ( taking into account the 1px border) = 58px wide per box
 
@@ -28,22 +30,41 @@ function buildEtch (size) {
     }
 }
 
-//Reset button 
+//clear button
 
 button.addEventListener('click', () => {
     document.querySelectorAll(".square__black").forEach(function(element) {
         element.classList.remove("square__black");
-    container.innerHTML = ''
+        document.querySelectorAll(".square").forEach(function(element) {
+            element.classList.remove("square__black")
+        })
     });
+})
+
+//new grid button
+buttonNew.addEventListener('click', () => {
     size = prompt("Enter a size for the new box ( max 100 )");
     if(size>100){
         size = prompt("Please pick a number between 1 and 100")
     }
+    container.innerHTML = ''
     buildEtch(size)
 })
 
-button.addEventListener('click', ()=> {
-    
-} )
 
-buildEtch(size);
+//MAGIC button (adds random RGBA value to each square)
+buttonWhite.addEventListener('click', () => {
+    document.querySelectorAll(".square").forEach(function(element) {
+        square.addEventListener('mouseover', () => {
+            if(!element.classList.contains("square__black")){
+            
+                element.classList.add("square__white");
+            }
+        })
+        
+    })
+        
+    })
+
+
+buildEtch(size);    
