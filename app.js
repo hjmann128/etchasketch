@@ -2,7 +2,6 @@ const container = document.querySelector('.container');
 const square = document.createElement('div');
 
 const button = document.querySelector('.reset')
-const buttonWhite = document.querySelector('.magic')
 const buttonNew = document.querySelector(".new")
 
 //Each box created must be 960px / number of boxes ( taking into account the 1px border) = 58px wide per box
@@ -52,19 +51,7 @@ buttonNew.addEventListener('click', () => {
 })
 
 
-//MAGIC button (adds random RGBA value to each square)
-buttonWhite.addEventListener('click', () => {
-    document.querySelectorAll(".square").forEach(function(element) {
-        square.addEventListener('mouseover', () => {
-            if(!element.classList.contains("square__black")){
-            
-                element.classList.add("square__white");
-            }
-        })
-        
-    })
-        
-    })
+
 
 
 buildEtch(size);    

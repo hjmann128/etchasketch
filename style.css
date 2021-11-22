@@ -1,7 +1,12 @@
 
+body {
+    background-color: #77CDE6
+}
+
 .btn__container {
     display: flex;
     justify-content: center;
+    gap: 20px;
 }
 
 button {
@@ -19,6 +24,7 @@ button {
     max-height: 960px;
     border: black solid 1px;
     margin: 50px auto;
+    background-color: white;
     
 }
 
